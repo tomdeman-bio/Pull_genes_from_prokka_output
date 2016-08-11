@@ -4,22 +4,23 @@
 
 use strict; 
 
-#gene name of interest, when spaces are present only the part before the first space is considered 
-my $gene_name = shift;
+#gene name of interest 
+my $gene_name = join(" ",@ARGV);
+my $file_name = join("_",@ARGV);
 
 if (scalar(@ARGV)==0){
 	print "Usage: perl $0 <gene name> \n";
 	exit;
 }
 
-#pull your gene(s) of interest using grep and awk
-system("grep -i '$gene_name' *.ffn | awk '{print $1}' > $gene_name.txt");
+#pull your gene(s) of interest using grep
+system("grep -i '$gene_name' *.ffn > $file_name.txt");
 
-open TXT, "$gene_name.txt" || die "cannot open $gene_name for reading";
+open TXT, "$file_name.txt" || die "cannot open $file_name for reading";
 
 while (<TXT>) {
 	chomp;
-	if ($_ =~ m/$gene_name/) {
+	if ($_ =~ m/$gene_name/i) {
 		my @line = split (":", $_);
 		my @split_second = split (">", $line[1]);
 		my @split_third = split (" ", $split_second[1]);
