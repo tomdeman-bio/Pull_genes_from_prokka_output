@@ -11,7 +11,7 @@
   done
 ```
 
-###Look for all .ffn output files and pull out your gene of interest, for instance Recombinase A (RecA)
+###Put all the .ffn files in the same folder (e.g. using ln -s or cp command) and pull out your gene of interest from each .ffn, for instance Recombinase A (RecA)
 ```bash
 
   perl pull_gene_from_prokka_ffn_fasta.pl Recombinase A
