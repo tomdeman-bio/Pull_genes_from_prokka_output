@@ -14,7 +14,7 @@ if (scalar(@ARGV)==0){
 }
 
 #pull your gene(s) of interest using grep
-system("grep -i '$gene_name' *.ffn > $file_name.txt");
+system("grep -i '$gene_name\$' *.ffn > $file_name.txt");
 
 open TXT, "$file_name.txt" || die "cannot open $file_name for reading";
 
