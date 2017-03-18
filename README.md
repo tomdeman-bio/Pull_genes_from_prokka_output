@@ -1,6 +1,6 @@
 # Pull genes from Prokka output
 
-###Perform a [Prokka 1.8] (https://github.com/tseemann/prokka) run on your FASTA formatted bacterial genome assemblies. Works best with assemblies retrieved from my wrapper [Sequence-scripts] (https://github.com/tomdeman-bio/Sequence-scripts)
+###Perform a [Prokka 1.8](https://github.com/tseemann/prokka) run on your FASTA formatted bacterial genome assemblies. Works best with assemblies retrieved from my wrapper [Sequence-scripts] (https://github.com/tomdeman-bio/Sequence-scripts)
 ```bash
   
   for i in *.fasta
